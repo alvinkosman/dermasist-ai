@@ -12,8 +12,8 @@ import matplotlib
 matplotlib.use('Agg')
 
 app = Flask(__name__)
-model = load_model('C:/Users/Unknown/Documents/UAS AI/skin-inceptionv3')
-NAMA_KELAS = sorted(listdir(r'D:\ISIC_2019\ISIC_2019_Test_Input'))
+model = load_model('skin-inceptionv3-epoch14-adam')
+NAMA_KELAS = ['Normal', 'Melanoma', 'Squamous Cell Carcinoma', 'Basal Cell Carcinoma']
 
 BARIS = 256
 KOLOM = 256
