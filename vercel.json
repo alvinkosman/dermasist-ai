@@ -5,9 +5,10 @@
       "src": "app.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.10"
+        "runtime": "python3.10."
       }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "app.py" }]
+  "routes": [{ "src": "/(.*)", "dest": "app.py" }],
+  "buildCommand": "pip install --upgrade pip setuptools && pip install --disable-pip-version-check --target . --upgrade -r requirements.txt"
 }
