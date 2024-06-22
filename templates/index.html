@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skin Cancer Classifier</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="manifest" href="/static/manifest.json" />
+  </head>
+  <body class="bg-light">
+    <div class="container my-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="card-title text-center">Skin Cancer Classifier</h1>
+          <form
+            class="text-center"
+            action="/"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="mb-3">
+              <input class="form-control" type="file" name="imagefile" />
+            </div>
+            <input
+              class="btn btn-primary"
+              type="submit"
+              value="Predict Image"
+            />
+          </form>
+
+          {% if prediction %}
+          <div class="alert alert-info text-center mt-4" role="alert">
+            Prediksi: Ini merupakan {{prediction}} dengan akurasi sebesar
+            {{accuracy}}
+          </div>
+          {% endif %} {% if image_path %}
+          <div class="text-center mt-4">
+            <img
+              src="{{ image_path }}"
+              alt="Uploaded Image"
+              class="img-fluid rounded"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/static/service-worker.js");
+      }
+    </script>
+  </body>
+</html>
