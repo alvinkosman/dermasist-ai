@@ -10,5 +10,3 @@
     }
   ],
   "routes": [{ "src": "/(.*)", "dest": "app.py" }],
-  "buildCommand": "pip install --upgrade pip setuptools && pip install --disable-pip-version-check --target . --upgrade -r requirements.txt"
-}
