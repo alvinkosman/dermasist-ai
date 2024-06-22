@@ -9,5 +9,5 @@
       }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "app.py" }],
+  "routes": [{ "src": "/(.*)", "dest": "app.py" }]
 }
