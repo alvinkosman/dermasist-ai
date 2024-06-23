@@ -7,6 +7,10 @@
       "config": {
         "runtime": "python3.10."
       }
+    },
+    {
+      "src": "requirements.txt",
+      "use": "@vercel/python"
     }
   ],
   "routes": [{ "src": "/(.*)", "dest": "app.py" }],
