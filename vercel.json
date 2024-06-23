@@ -5,12 +5,19 @@
       "src": "app.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.10."
+        "runtime": "python3.10"
       }
     },
     {
       "src": "requirements.txt",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [{ "src": "/(.*)", "dest": "app.py" }],
