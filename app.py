@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use('Agg')
 
 app = Flask(__name__)
-model = load_model('skin-inceptionv3-epoch14-adam')
+model = load_model('skin-inceptionv3-epoch140-adam')
 NAMA_KELAS = ['Normal', 'Melanoma', 'Squamous Cell Carcinoma', 'Basal Cell Carcinoma']
 
 BARIS = 256
